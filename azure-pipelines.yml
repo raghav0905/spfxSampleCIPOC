@@ -53,11 +53,14 @@ steps:
     targets: 'package-solution'
     arguments: '--ship'
     enableCodeCoverage: false
-- task: PublishCodeCoverageResults@1
-  inputs:
-    codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '$(Build.SourcesDirectory)/**/*-coverage.xml'
+
 - task: CopyFiles@2
   inputs:
     Contents: '**\*.sppkg'
     TargetFolder: '$(build.artifactstagingdirectory)/drop'
+
+- task : PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation : 'Container'
