@@ -3,7 +3,7 @@
   "solution": {
     "name": "cicdpoc-client-side-solution",
     "id": "aad17095-52e0-4482-b3df-e22e6840e049",
-    "version": "1.0.0.0",
+    "version": "1.0.0.1",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false
